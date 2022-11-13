@@ -1,10 +1,10 @@
-# @codemancers/gatsby-plugin-google-tagmanager
+# @code-mancers/gatsby-plugin-google-tagmanager
 
 Easily add Google Tagmanager to your Gatsby site.
 
 ## Install
 
-`npm install @codemancers/gatsby-plugin-google-tagmanager`
+`npm install @code-mancers/gatsby-plugin-google-tagmanager`
 
 ## How to use
 
