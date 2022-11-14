@@ -1,3 +1,5 @@
+"use strict";
+
 /** @type {import('gatsby').GatsbyNode["onPreInit"]} */
 exports.onPreInit = (args, options) => {
   if (options.defaultDataLayer) {
@@ -48,6 +50,6 @@ exports.pluginOptionsSchema = ({ Joi }) =>
     doNotSendPageViewOnFirstPageLoad: Joi.boolean()
       .default(true)
       .description(
-        `Option for not sendong page view on first page load to Google Tag Manager`
+        `Option for not sending page view on first page load to Google Tag Manager`
       ),
   });

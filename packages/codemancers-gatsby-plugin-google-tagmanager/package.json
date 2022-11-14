@@ -1,10 +1,10 @@
 {
   "name": "@code-mancers/gatsby-plugin-google-tagmanager",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Gatsby plugin to add google tagmanager onto a site",
   "main": "index.js",
   "keywords": [
-    "google-tag-manager",
+    "google-tagmanager",
     "gtm",
     "analytics",
     "gatsby"
@@ -24,7 +24,7 @@
     "gatsby-plugin-utils": "^4.0.0-next.4"
   },
   "peerDependencies": {
-    "gatsby": "^4.0.0-next",
+    "gatsby": "^4.23.0 || ^4.24.7 || ^4.0.0-next || ^5.0.0-next",
     "react": "^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0",
     "react-dom": "^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0"
   },
