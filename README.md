@@ -42,7 +42,7 @@ plugins: [
       // Defaults to https://www.googletagmanager.com
       selfHostedOrigin: "YOUR_SELF_HOSTED_ORIGIN",
       // Defaults to true
-      doNotSendPageViewOnFirstPageLoad: true,
+      fireGtmOnFirstPageLoad: true,
     },
   },
 ];
