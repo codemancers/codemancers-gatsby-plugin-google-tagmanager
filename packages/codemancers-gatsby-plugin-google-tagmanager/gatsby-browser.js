@@ -64,8 +64,11 @@ export function onRouteUpdate({ prevLocation }, pluginOptions) {
     // so when gatsby detects that this is the first page load and this option is true
     // then do not fire the gtm event.
     // but when option is true and page load is not the first page then only fire the gtm event.
-    const fireGtm =
-      pluginOptions.doNotSendPageViewOnFirstPageLoad && prevLocation !== null;
+    const isFirstPage = prevLocation === null;
+    let fireGtm = true;
+    if (isFirstPage && !pluginOptions.fireGtmOnFirstPageLoad) {
+      fireGtm = false;
+    }
     if (fireGtm) {
       // wrap inside a timeout to ensure the title has properly been changed
       setTimeout(() => {

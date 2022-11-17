@@ -47,7 +47,7 @@ exports.pluginOptionsSchema = ({ Joi }) =>
     selfHostedOrigin: Joi.string()
       .default(`https://www.googletagmanager.com`)
       .description(`The origin where GTM is hosted.`),
-    doNotSendPageViewOnFirstPageLoad: Joi.boolean()
+    fireGtmOnFirstPageLoad: Joi.boolean()
       .default(true)
       .description(
         `Option for not sending page view on first page load to Google Tag Manager`
