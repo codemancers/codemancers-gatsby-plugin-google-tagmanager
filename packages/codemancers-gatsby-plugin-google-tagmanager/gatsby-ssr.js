@@ -6,6 +6,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _commonTags = require("common-tags");
 
+var _script = require("gatsby");
+
 const generateGTM = ({
   id,
   environmentParamStr,
@@ -79,8 +81,8 @@ exports.onRenderBody = (
       // web-vitals/polyfill (necessary for non chromium browsers)
       // @seehttps://www.npmjs.com/package/web-vitals#how-the-polyfill-works
       inlineScripts.push(
-        /*#__PURE__*/ _react.default.createElement("script", {
-          key: `gatsby-plugin-google-tagmanager-web-vitals`,
+        /*#__PURE__*/ _react.default.createElement(_script.Script, {
+          id: `gatsby-plugin-google-tagmanager-web-vitals`,
           "data-gatsby": "web-vitals-polyfill",
           dangerouslySetInnerHTML: {
             __html: `
@@ -92,8 +94,8 @@ exports.onRenderBody = (
     }
 
     inlineScripts.push(
-      /*#__PURE__*/ _react.default.createElement("script", {
-        key: "plugin-google-tagmanager",
+      /*#__PURE__*/ _react.default.createElement(_script.Script, {
+        id: "plugin-google-tagmanager",
         dangerouslySetInnerHTML: {
           __html: (0, _commonTags.oneLine)`
           ${defaultDataLayerCode}
