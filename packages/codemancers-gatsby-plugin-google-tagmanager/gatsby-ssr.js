@@ -79,10 +79,9 @@ exports.onRenderBody = (
       // web-vitals/polyfill (necessary for non chromium browsers)
       // @seehttps://www.npmjs.com/package/web-vitals#how-the-polyfill-works
       inlineScripts.push(
-        /*#__PURE__*/ _react.default.createElement("Script", {
+        /*#__PURE__*/ _react.default.createElement("script", {
           key: "gatsby-plugin-google-tagmanager-web-vitals",
-          id: "gatsby-plugin-google-tagmanager-web-vitals",
-          strategy: "off-main-thread",
+          "data-strategy": "off-main-thread",
           "data-gatsby": "web-vitals-polyfill",
           dangerouslySetInnerHTML: {
             __html: `
@@ -94,10 +93,9 @@ exports.onRenderBody = (
     }
 
     inlineScripts.push(
-      /*#__PURE__*/ _react.default.createElement("Script", {
+      /*#__PURE__*/ _react.default.createElement("script", {
         key: "plugin-google-tagmanager",
-        id: "plugin-google-tagmanager",
-        strategy: "off-main-thread",
+        "data-strategy": "off-main-thread",
         dangerouslySetInnerHTML: {
           __html: (0, _commonTags.oneLine)`
           ${defaultDataLayerCode}
