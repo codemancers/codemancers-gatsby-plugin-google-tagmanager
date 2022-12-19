@@ -82,6 +82,7 @@ exports.onRenderBody = (
         /*#__PURE__*/ _react.default.createElement("Script", {
           key: "gatsby-plugin-google-tagmanager-web-vitals",
           id: "gatsby-plugin-google-tagmanager-web-vitals",
+          strategy: "off-main-thread",
           "data-gatsby": "web-vitals-polyfill",
           dangerouslySetInnerHTML: {
             __html: `
@@ -96,6 +97,7 @@ exports.onRenderBody = (
       /*#__PURE__*/ _react.default.createElement("Script", {
         key: "plugin-google-tagmanager",
         id: "plugin-google-tagmanager",
+        strategy: "off-main-thread",
         dangerouslySetInnerHTML: {
           __html: (0, _commonTags.oneLine)`
           ${defaultDataLayerCode}
