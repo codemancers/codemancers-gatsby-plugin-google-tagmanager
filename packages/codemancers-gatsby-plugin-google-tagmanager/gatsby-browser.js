@@ -56,33 +56,33 @@ function sendToGTM({ name, value, id }, dataLayer) {
   });
 }
 
-export function onRouteUpdate({ prevLocation }, pluginOptions) {
-  if (
-    process.env.NODE_ENV === `production` ||
-    pluginOptions.includeInDevelopment
-  ) {
-    // so when gatsby detects that this is the first page load and this option is true
-    // then do not fire the gtm event.
-    // but when option is true and page load is not the first page then only fire the gtm event.
-    const isFirstPage = prevLocation === null;
-    let fireGtm = true;
-    if (isFirstPage && !pluginOptions.fireGtmOnFirstPageLoad) {
-      fireGtm = false;
-    }
-    if (fireGtm) {
-      // wrap inside a timeout to ensure the title has properly been changed
-      setTimeout(() => {
-        const data = pluginOptions.dataLayerName
-          ? window[pluginOptions.dataLayerName]
-          : window.dataLayer;
-        const eventName = pluginOptions.routeChangeEventName
-          ? pluginOptions.routeChangeEventName
-          : `gatsby-route-change`;
-        data.push({ event: eventName });
-      }, 50);
-    }
-  }
-}
+// export function onRouteUpdate({ prevLocation }, pluginOptions) {
+//   if (
+//     process.env.NODE_ENV === `production` ||
+//     pluginOptions.includeInDevelopment
+//   ) {
+//     // so when gatsby detects that this is the first page load and this option is true
+//     // then do not fire the gtm event.
+//     // but when option is true and page load is not the first page then only fire the gtm event.
+//     const isFirstPage = prevLocation === null;
+//     let fireGtm = true;
+//     if (isFirstPage && !pluginOptions.fireGtmOnFirstPageLoad) {
+//       fireGtm = false;
+//     }
+//     if (fireGtm) {
+//       // wrap inside a timeout to ensure the title has properly been changed
+//       setTimeout(() => {
+//         const data = pluginOptions.dataLayerName
+//           ? window[pluginOptions.dataLayerName]
+//           : window.dataLayer;
+//         const eventName = pluginOptions.routeChangeEventName
+//           ? pluginOptions.routeChangeEventName
+//           : `gatsby-route-change`;
+//         data.push({ event: eventName });
+//       }, 50);
+//     }
+//   }
+// }
 
 export function onInitialClientRender(_, pluginOptions) {
   // we only load the polyfill in production so we can't enable it in development

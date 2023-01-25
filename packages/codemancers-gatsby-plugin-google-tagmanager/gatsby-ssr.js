@@ -92,34 +92,34 @@ exports.onRenderBody = (
       );
     }
 
-    inlineScripts.push(
-      /*#__PURE__*/ _react.default.createElement("script", {
-        key: "plugin-google-tagmanager",
-        "data-strategy": "off-main-thread",
-        dangerouslySetInnerHTML: {
-          __html: (0, _commonTags.oneLine)`
-          ${defaultDataLayerCode}
-          ${generateGTM({
-            id,
-            environmentParamStr,
-            dataLayerName,
-            selfHostedOrigin,
-          })}`,
-        },
-      })
-    );
+    // inlineScripts.push(
+    //   /*#__PURE__*/ _react.default.createElement("script", {
+    //     key: "plugin-google-tagmanager",
+    //     "data-strategy": "off-main-thread",
+    //     dangerouslySetInnerHTML: {
+    //       __html: (0, _commonTags.oneLine)`
+    //       ${defaultDataLayerCode}
+    //       ${generateGTM({
+    //         id,
+    //         environmentParamStr,
+    //         dataLayerName,
+    //         selfHostedOrigin,
+    //       })}`,
+    //     },
+    //   })
+    // );
     setHeadComponents(inlineScripts);
-    setPreBodyComponents([
-      /*#__PURE__*/ _react.default.createElement("noscript", {
-        key: "plugin-google-tagmanager",
-        dangerouslySetInnerHTML: {
-          __html: generateGTMIframe({
-            id,
-            environmentParamStr,
-            selfHostedOrigin,
-          }),
-        },
-      }),
-    ]);
+    // setPreBodyComponents([
+    //   /*#__PURE__*/ _react.default.createElement("noscript", {
+    //     key: "plugin-google-tagmanager",
+    //     dangerouslySetInnerHTML: {
+    //       __html: generateGTMIframe({
+    //         id,
+    //         environmentParamStr,
+    //         selfHostedOrigin,
+    //       }),
+    //     },
+    //   }),
+    // ]);
   }
 };
